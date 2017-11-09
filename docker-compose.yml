@@ -1,0 +1,10 @@
+registry:
+  restart: always
+  image: registry:2
+  environment:
+    - REGISTRY_STORAGE_DELETE_ENABLED = true  
+  ports:
+    - 5000:5000
+  volumes:
+    - /home/ubuntu/config.yml:/etc/docker/registry/config.yml 
+    - /var/lib/docker/data:/var/lib/registry
